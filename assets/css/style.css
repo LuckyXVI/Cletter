@@ -150,7 +150,7 @@ body {
   display: none;
   position: fixed;
   top: 20%;
-  left: 15%;
+  left: 20%;
   transform: translate(-50%, -50%);
   width: 800px;
   max-width: 95%;
@@ -230,15 +230,18 @@ body {
 @media (max-width: 600px) {
   #card {
     position: relative;
-    transform: none;
+    width: 92%;
+    max-width: 420px;
+    margin: 2em auto;
     top: auto;
     left: auto;
+    transform: none;
     flex-direction: column;
-    margin: 2em auto;
   }
 
   .side {
     width: 100%;
+    padding: 20px;
     transform: none;
   }
 
@@ -246,11 +249,14 @@ body {
     display: none;
   }
 
-  #card p {
-    font-size: 1.15em;
+  #card h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
   }
 
-  #card h2 {
-    font-size: 2em;
+  #card p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    text-align: left;
   }
 }

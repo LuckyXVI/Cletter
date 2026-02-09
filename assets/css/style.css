@@ -143,17 +143,18 @@ body {
   transform: translate(-50%, -40px);
 }
 
-
 /* =====================
    CARTA
 ===================== */
 #card {
   display: none;
   position: fixed;
+  top: 20%;
+  left: 25%;
+  transform: translate(-50%, -50%);
   width: 800px;
   height: 500px;
-  top: -15px;
-  left: 25%;
+  z-index: 10;
 }
 
 .side {

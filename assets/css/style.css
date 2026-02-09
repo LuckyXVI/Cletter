@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Sacramento", cursive;
+  background-color: #f1e3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =====================
+   CONTADOR
+===================== */
+#countdown-container {
+  text-align: center;
+}
+
+#countdown-container h1 {
+  font-size: 3em;
+  color: #e01911;
+}
+
+#countdown {
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+/* =====================
+   SOBRE
+===================== */
+.valentines-day {
+  position: relative;
+  width: 360px;
+  height: 260px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.envelope {
+  position: absolute;
+  z-index: 1;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  width: 254px;
+  height: 254px;
+  background-color: #ff9494;
+  transform: rotate(-45deg);
+  border-radius: 0 15px 0 0;
+  left: -37px;
+  top: -82px;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  background-color: #ff9494;
+  width: 360px;
+  height: 225px;
+  left: -90px;
+  top: 45px;
+}
+
+.heart {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: #e01911;
+  transform: rotate(-45deg);
+  top: 80px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: #e01911;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -100px;
+}
+
+.heart::after {
+  left: 100px;
+}
+
+.text {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  letter-spacing: 3px;
+  font-size: 0.9em;
+  z-index: 3;
+}
+
+.front {
+  position: absolute;
+  top: 60px;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  border-right: 190px solid #fbd2d2;
+  border-top: 113px solid transparent;
+  border-bottom: 113px solid transparent;
+  left: 80px;
+}
+
+.front::before {
+  content: "";
+  position: absolute;
+  border-left: 190px solid #fbd2d2;
+  border-top: 113px solid transparent;
+  border-bottom: 113px solid transparent;
+  left: -170px;
+  top: -113px;
+}
+
+.front::after {
+  content: "";
+  position: absolute;
+  border-bottom: 150px solid #fce7e9;
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  left: -170px;
+  top: -36px;
+}
+
+.valentines-day:hover .heart {
+  transform: translateY(-40px) rotate(-45deg);
+}
+
+.valentines-day:hover .text {
+  transform: translate(-50%, -40px);
+}
+
+/* =====================
+   CARTA
+===================== */
+#card {
+  display: none;
+  position: fixed;
+  width: 800px;
+  height: 500px;
+  top: -15px;
+  left: 25%;
+}
+
+.side {
+  width: 400px;
+  height: 550px;
+  padding: 10px;
+  background: #eee;
+}
+
+.side.one {
+  background: linear-gradient(90deg, #fff, #ddd);
+  transform: skew(10deg, 20deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side.one i {
+  font-size: 8em;
+  color: red;
+  animation: pulse 1s infinite alternate;
+}
+
+.side.two {
+  background: linear-gradient(-90deg, #fff, #f0f0f0);
+  transform: skew(10deg, -15deg);
+}
+
+#card h2 {
+  font-size: 3em;
+  color: pink;
+  text-align: center;
+}
+
+#card p {
+  font-size: 1.5em;
+  padding: 0 30px;
+  text-align: justify;
+}
+
+/* =====================
+   ANIMACIONES
+===================== */
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 600px) {
+
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .valentines-day {
+    width: 280px;
+    height: 210px;
+  }
+
+  .heart {
+    width: 140px;
+    height: 140px;
+    top: 70px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 140px;
+    height: 140px;
+  }
+
+  .heart::before {
+    top: -80px;
+  }
+
+  .heart::after {
+    left: 80px;
+  }
+
+  .text {
+    font-size: 0.8em;
+    top: 85px;
+  }
+
+  #card {
+    position: static;
+    width: 90%;
+    margin: 2em auto;
+  }
+
+  .side.one {
+    display: none;
+  }
+
+  .side {
+    width: 100%;
+    height: auto;
+  }
+}

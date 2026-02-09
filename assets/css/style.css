@@ -153,115 +153,104 @@ body {
   left: 25%;
   transform: translate(-50%, -50%);
   width: 800px;
-  height: 500px;
+  max-width: 95%;
+  height: auto;
+  display: flex;
   z-index: 10;
+  font-family: "Sacramento", cursive;
 }
 
+/* =====================
+   LADOS
+===================== */
 .side {
-  width: 400px;
-  height: 550px;
-  padding: 10px;
-  background: #eee;
+  width: 50%;
+  padding: 25px;
+  background: #fdfdfd;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
+/* =====================
+   LADO IZQUIERDO
+===================== */
 .side.one {
-  background: linear-gradient(90deg, #fff, #ddd);
-  transform: skew(10deg, 20deg);
+  background: linear-gradient(135deg, #fff, #f1f1f1);
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: skew(-5deg);
 }
 
 .side.one i {
-  font-size: 8em;
-  color: red;
+  font-size: 7em;
+  color: #e01911;
   animation: pulse 1s infinite alternate;
 }
 
+/* =====================
+   LADO DERECHO
+===================== */
 .side.two {
-  background: linear-gradient(-90deg, #fff, #f0f0f0);
-  transform: skew(10deg, -15deg);
+  background: linear-gradient(135deg, #fff, #fce7e9);
+  transform: skew(5deg);
 }
 
+/* =====================
+   TEXTO
+===================== */
 #card h2 {
-  font-size: 3em;
-  color: pink;
   text-align: center;
+  font-size: 2.5em;
+  color: #ff6b81;
+  margin-bottom: 15px;
 }
 
 #card p {
-  font-size: 1.5em;
-  padding: 0 30px;
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-bottom: 12px;
   text-align: justify;
 }
 
 /* =====================
-   ANIMACIONES
+   ANIMACIÓN CORAZÓN
 ===================== */
 @keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.2); }
-}
-
-@keyframes fall {
+  from {
+    transform: scale(1);
+  }
   to {
-    transform: translateY(300px);
-    opacity: 0;
+    transform: scale(1.2);
   }
 }
 
 /* =====================
-   MOBILE
+   RESPONSIVE MÓVIL
 ===================== */
 @media (max-width: 600px) {
-
-  body {
-    height: auto;
-    overflow-y: auto;
-  }
-
-  .valentines-day {
-    width: 280px;
-    height: 210px;
-  }
-
-  .heart {
-    width: 140px;
-    height: 140px;
-    top: 70px;
-  }
-
-  .heart::before,
-  .heart::after {
-    width: 140px;
-    height: 140px;
-  }
-
-  .heart::before {
-    top: -80px;
-  }
-
-  .heart::after {
-    left: 80px;
-  }
-
-  .text {
-    font-size: 0.8em;
-    top: 85px;
-  }
-
   #card {
-    position: static;
-    width: 90%;
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    flex-direction: column;
     margin: 2em auto;
+  }
+
+  .side {
+    width: 100%;
+    transform: none;
   }
 
   .side.one {
     display: none;
   }
 
-  .side {
-    width: 100%;
-    height: auto;
+  #card p {
+    font-size: 1.15em;
+  }
+
+  #card h2 {
+    font-size: 2em;
   }
 }

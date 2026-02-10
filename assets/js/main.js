@@ -1,5 +1,5 @@
 /* ⏳ TEMPORIZADOR */
-const targetDate = new Date("2026-02-09T00:00:00").getTime();
+const targetDate = new Date("2026-02-14T00:00:00").getTime();
 
 const countdown = document.getElementById("countdown");
 const countdownContainer = document.getElementById("countdown-container");

@@ -228,11 +228,15 @@ body {
    RESPONSIVE MÓVIL
 ===================== */
 @media (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+
   #card {
     position: relative;
-    width: 92%;
-    max-width: 420px;
-    margin: 2em auto;
+    width: 90%;
+    max-width: 380px;
+    margin: 1.5em auto 3em;
     top: auto;
     left: auto;
     transform: none;
@@ -241,7 +245,7 @@ body {
 
   .side {
     width: 100%;
-    padding: 20px;
+    padding: 18px 18px 26px;
     transform: none;
   }
 
@@ -250,13 +254,17 @@ body {
   }
 
   #card h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 1.6em;
+    margin-bottom: 8px;
   }
 
   #card p {
-    font-size: 1.05em;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.55;
     text-align: left;
+  }
+
+  #card p:last-child {
+    margin-bottom: 10px;
   }
 }

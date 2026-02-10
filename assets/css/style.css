@@ -191,13 +191,32 @@ body {
    LADO DERECHO
 ===================== */
 .side.two {
-  background: linear-gradient(135deg, #fff, #fce7e9);
-  transform: skew(5deg);
+  background-color: #fffaf3;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 22px 22px;
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,0.05),
+    0 12px 30px rgba(0,0,0,0.25);
+  border-radius: 4px;
 }
+.side.two {
+  clip-path: polygon(
+    0% 0%, 98% 1%, 100% 98%, 2% 100%
+  );
+}
+.side.two {
+  background-color: #fff6e5;
+}
+
 
 /* =====================
    TEXTO
 ===================== */
+#card {
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.35));
+}
 #card h2 {
   text-align: center;
   font-size: 2.5em;
@@ -268,3 +287,10 @@ body {
     margin-bottom: 10px;
   }
 }
+#card p:last-child {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+

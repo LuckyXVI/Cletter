@@ -24,8 +24,11 @@ const timer = setInterval(() => {
     countdown.innerHTML = `${d} días 💖 ${h} h 💘 ${m} m 💝 ${s} s`;
 }, 1000);
 
-/* 💌 ANIMACIONES */
+/* 💌 ANIMACIONES + MÚSICA */
 $(document).ready(function () {
+
+    const audio = document.getElementById('dorotheaAudio');
+    let audioPlayed = false;
 
     $('#card').css({
         display: 'none',
@@ -36,6 +39,15 @@ $(document).ready(function () {
     $('.valentines-day').on('click', function () {
 
         $(this).css('pointer-events', 'none');
+
+        /* 🎶 reproducir música solo una vez */
+        if (!audioPlayed) {
+            audio.volume = 0.5;
+            audio.play().catch(() => {
+                console.log('Autoplay bloqueado hasta interacción');
+            });
+            audioPlayed = true;
+        }
 
         $('.envelope').css({
             animation: 'fall 3s linear 1'
